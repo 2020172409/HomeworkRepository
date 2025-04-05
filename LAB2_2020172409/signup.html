@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Welcome to INTERNET-PROGRAMMING MOVIE SITE</h1>
+    <div class="nav-links">
+        <a href="signup.html">회원가입</a> | <a href="login.html">로그인</a>
+    </div>
+
+    <div class="form-box">
+        <form action="login.html" method="post">
+            <table>
+                <tr>
+                    <td>이름 :</td>
+                    <td><input type="text" name="name" autofocus placeholder="이름 입력" required></td>
+                </tr>
+                <tr>
+                    <td>생일 :</td>
+                    <td><input type="date" name="birth" required></td>
+                </tr>
+                <tr>
+                    <td>성별 :</td>
+                    <td>
+                        <input type="radio" name="gender" value="남성" required> 남성
+                        <input type="radio" name="gender" value="여성"> 여성
+                    </td>
+                </tr>
+                <tr>
+                    <td>학년 :</td>
+                    <td>
+                        <select name="grade" required>
+                            <option value="">선택하세요</option>
+                            <option value="1">1학년</option>
+                            <option value="2">2학년</option>
+                            <option value="3">3학년</option>
+                            <option value="4">4학년</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>아이디 :</td>
+                    <td><input type="text" name="userid" required></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 :</td>
+                    <td><input type="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td>이메일 :</td>
+                    <td><input type="email" name="email" autocomplete="on" required></td>
+                </tr>
+                <tr>
+                    <td>보안 질문 :</td>
+                    <td>
+                        <select name="security_question" required>
+                            <option value="">질문을 선택하세요</option>
+                            <option value="1">기억에 남는 선생님 성함은?</option>
+                            <option value="2">가장 좋아하는 색깔은?</option>
+                            <option value="3">3년전에 좋아했던 취미는?</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>답변 :</td>
+                    <td><input type="text" name="security_answer" required></td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit" class="btn signup-btn">Signup</button>
+            <button type="reset" class="btn cancel-btn">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
