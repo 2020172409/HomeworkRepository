@@ -1,0 +1,30 @@
+[
+  {
+    "title": "The Godfather",
+    "rating": 9.2,
+    "release": "1972-03-24",
+    "image": "http://image.tmdb.org/t/p/w185/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
+    "overview": "The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son."
+  },
+  {
+    "title": "Jumanji",
+    "rating": 6.9,
+    "release": "1995-12-15",
+    "image": "http://image.tmdb.org/t/p/w185/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
+    "overview": "When two kids find and play a magical board game, they release a man trapped in it for decades."
+  },
+  {
+    "title": "Toy Story",
+    "rating": 7.7,
+    "release": "1995-10-30",
+    "image": "https://image.tmdb.org/t/p/w185/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+    "overview": "Led by Woody, Andy's toys live happily until Buzz Lightyear arrives and rivalry begins."
+  },
+  {
+    "title": "The Untold",
+    "rating": 6.8,
+    "release": "2002-08-30",
+    "image": "http://image.tmdb.org/t/p/w185/rPHneBW9Gles5QsFzSduoLAZVhy.jpg",
+    "overview": "A team of anthropologists finds evidence of Sasquatch while searching for a missing man."
+  }
+]

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인터넷 프로그래밍 영화 사이트</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<header>
+  <h1 class="main-title">인터넷 프로그래밍 영화 사이트입니다.</h1>
+</header>
+<nav class="nav-links">
+  <a href="index.html">메인페이지</a>
+  <a href="login.html">로그인</a>
+  <a href="signup.html">회원가입</a>
+</nav>
+<section class="movie-sort-section">
+  <h2>Movies</h2>
+  <div class="sort-controls-box">
+    <strong>정렬 기준</strong><br>
+    <label><input type="radio" name="sortOption" value="rating-desc" checked> 평점 내림차순</label><br>
+    <label><input type="radio" name="sortOption" value="rating-asc"> 평점 오름차순</label><br>
+    <label><input type="radio" name="sortOption" value="release-desc"> 개봉 내림차순</label><br>
+    <label><input type="radio" name="sortOption" value="release-asc"> 개봉 오름차순</label>
+  </div>
+</section>
+
+<main class="movie-container">
+ 
+</main>
+
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-title">About</div>
+    <div class="about-content">
+      인터넷 프로그래밍 과제입니다. 인터넷 프로그래밍 과제입니다. 인터넷 프로그래밍 과제입니다.
+      인터넷 프로그래밍 과제입니다. 인터넷 프로그래밍 과제입니다. 인터넷 프로그래밍 과제입니다.
+    </div>
+  </div>
+</section>
+</body>
+<script>
+const movies = [
+  {
+    title: "The Godfather",
+    rating: 9.2,
+    release: "1972-03-24",
+    image: "http://image.tmdb.org/t/p/w185/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
+    overview: "The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son."
+  },
+  {
+    title: "Jumanji",
+    rating: 6.9,
+    release: "1995-12-15",
+    image: "http://image.tmdb.org/t/p/w185/vzmL6fP7aPKNKPRTFnZmiUfciyV.jpg",
+    overview: "When two kids find and play a magical board game, they release a man trapped in it for decades."
+  },
+  {
+    title: "Toy Story",
+    rating: 7.7,
+    release: "1995-10-30",
+    image: "https://image.tmdb.org/t/p/w185/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+    overview: "Led by Woody, Andy's toys live happily until Buzz Lightyear arrives and rivalry begins."
+  },
+  {
+    title: "The Untold",
+    rating: 6.8,
+    release: "2002-08-30",
+    image: "http://image.tmdb.org/t/p/w185/rPHneBW9Gles5QsFzSduoLAZVhy.jpg",
+    overview: "A team of anthropologists finds evidence of Sasquatch while searching for a missing man."
+  }
+];
+
+function sortMovies() {
+  const selected = document.querySelector('input[name="sortOption"]:checked');
+  const value = selected ? selected.value : 'rating-desc';
+  const container = document.querySelector('.movie-container');
+  container.innerHTML = '';
+
+  let sorted = [...movies];
+  if (value === 'rating-desc') sorted.sort((a, b) => b.rating - a.rating);
+  else if (value === 'rating-asc') sorted.sort((a, b) => a.rating - b.rating);
+  else if (value === 'release-desc') sorted.sort((a, b) => new Date(b.release) - new Date(a.release));
+  else if (value === 'release-asc') sorted.sort((a, b) => new Date(a.release) - new Date(b.release));
+
+  for (const movie of sorted) {
+    const item = document.createElement('div');
+    item.className = 'movie-item';
+    item.innerHTML = `
+      <div class="img-wrapper">
+        <img src="${movie.image}" alt="${movie.title}">
+        <div class="movie-overview">${movie.overview}</div>
+      </div>
+      <div class="movie-meta">
+        <div class="movie-title">${movie.title}</div>
+        <div class="movie-release">📅 ${movie.release}</div>
+        <div class="movie-rating">⭐ ${movie.rating.toFixed(1)}/10</div>
+      </div>`;
+    container.appendChild(item);
+  }
+}
+
+window.onload = () => {
+  sortMovies();
+  document.querySelectorAll('input[name="sortOption"]').forEach(r => r.addEventListener('change', sortMovies));
+};
+</script>
+</html>
